@@ -1,11 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            background-color: #203F97;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #logo {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        #company-name {
+            font-size: 18px;
+        }
+
+        #user-name {
+            font-size: 18px;
+            display: flex; /* Para alinhar a foto e o nome verticalmente */
+            align-items: center;
+        }
+
+        #user-photo {
+            border-radius: 50%; /* Bordas arredondadas para a foto de perfil */
+            width: 30px; /* Largura da foto de perfil */
+            height: 30px; /* Altura da foto de perfil */
+            margin-left: 10px; /* Espaçamento entre a foto e o nome */
+        }
+
+        #menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #203F97;
+        }
+
+        #sidebar {
+            background-color: #203F97;
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s;
+            
+        }
+
+        #search-bar-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        #search-bar {
+            width: 30%;
+            padding: 5px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        #footer {
+            background-color: #203F97;
+            text-align: center;
+            padding: 3px; /* Altura do rodapé reduzida */
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 10px; /* Tamanho da fonte reduzido */
+        }
+
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            #company-name {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            #user-name {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            #search-bar-container {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="header">
+        <div>
+            <span id="menu-toggle">&#9776;</span>
+            <img id="logo" src="D:\FACULDADE\2023\Web, Mobile\PaginaWeb\Logo.webp" alt="Logo da Empresa">
+            <span id="company-name">OrderEase</span>
+            <div id="sidebar">
+                <!-- Conteúdo do menu lateral pode ser adicionado aqui -->
+            </div>
+        </div>
+        <div id="search-bar-container">
+            <input type="text" id="search-bar" placeholder="Pesquisar...">
+        </div>
+        <span id="user-name">Marcelo Tizo
+            <img id="user-photo" src="caminho_da_foto_de_perfil.jpg" alt="Foto de Perfil">
+        </span>
+    </div>
+    <h1>garcom</h1>
+    <div id="footer">
+        Desenvolvido por TizDeveloper Inc.
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px';
+            } else {
+                sidebar.style.left = '0px';
+            }
+        });
+    </script>
 </body>
 </html>
